@@ -1,47 +1,172 @@
 <html>
     <head>
         <style>
-            
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligns content to the top-left */
-  }
+          * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-  img {
-    width: 100px; /* Adjust the width of the image */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Add spacing below the image */
-  }
+            body {
+                font-family: 'Times New Roman', Times, serif, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center content horizontally */
+            }
 
-  h1 {
-    margin-bottom: 20px;
-    font-size: 30px;
-    color: #333;
-    
-  }
+            nav {
+                width: 100%;
+                background-color: #f3ecff;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                position: fixed;
+                top: 0;
+                z-index: 100; /* Ensure it stays above other content */
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-  p {
-    text-align: justify; /* Justify paragraph text */
-    color: #555;
-    width: 1300px; /* Optional: Limit paragraph width for better readability */
-  }
+            .logo img {
+                width: 150px;
+                height: 100px;
+            }
 
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 15px;
+            }
+
+            .nav-links li {
+                display: inline;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+                padding: 5px 10px;
+            }
+
+            .nav-links a:hover {
+                color: #666;
+            }
+
+            .search-bar {
+                display: none;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .search-bar input {
+                padding: 5px;
+                margin-right: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .search-bar button {
+                padding: 5px 10px;
+                background-color: #666;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .search-bar button:hover {
+                background-color: #333;
+            }
+
+            main {
+                margin-top: 80px; /* Add margin to prevent content overlap with the navbar */
+                padding: 20px;
+                width: 80%;
+                text-align: justify;
+            }
+
+            img {
+                width: 100px; /* Adjust the width of the image */
+                height: auto; /* Maintain aspect ratio */
+                margin-bottom: 10px; /* Add spacing below the image */
+            }
+
+            h1 {
+                margin-bottom: 20px;
+                font-size: 30px;
+                color: #333;
+            }
+
+            p {
+                text-align: justify; /* Justify paragraph text */
+                color: #555;
+                line-height: 1.8;
+                font-size: 20px;
+            }
+            .content-block {
+                background-color: #f9f9f9;
+                border: 1px solid black;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
         </style>
     </head>
     <body>
+      <nav class="navbar">
+        <div class="logo">
+            <img src="pic/1.png" height="50px" width="50px">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Logout</a></li>
+            <li><a href="#search" id="searchLink">Search</a></li>
+        </ul>
+
+        <!-- Search bar inside navbar -->
+        <div class="search-bar" id="searchBar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </nav>
+    <script>
+        // JavaScript to toggle the search bar visibility
+        document.getElementById('searchLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const searchBar = document.getElementById('searchBar');
+            if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                searchBar.style.display = 'flex';
+            } else {
+                searchBar.style.display = 'none';
+            }
+        });
+    </script>
         
-        <img src="pic/1.png">
-        <center><h1>About Us</h1></center>
-              <p><strong>Dawa</strong> Karpo is a pioneering e-shopping platform that was established on March 23, 1980. Originally starting as a small IT company, it focused primarily on developing websites and web applications. This foundation in technology gave the company a strong base to understand the growing digital landscape and adapt to emerging trends. By leveraging its technical expertise, Dawa Karpo gradually built a reputation for delivering reliable and innovative digital solutions.</p>
-              <p>In its initial years, the company concentrated on providing IT services to local clients, aiming to simplify online processes for businesses. Over time, it recognized the potential of e-commerce and decided to shift its focus toward creating a comprehensive online shopping platform. This strategic move allowed Dawa Karpo to cater to the rising demand for digital shopping, marking the beginning of its transformation into a major player in the e-commerce industry.</p>
-              <p>By continually adapting to market needs and investing in cutting-edge technologies, Dawa Karpo expanded its operations significantly. The company diversified its services, offering a wide range of products and features to enhance the customer experience. Its commitment to innovation, coupled with a customer-first approach, enabled it to gain a competitive edge in the market. The transition from a small IT company to a full-fledged e-commerce platform was a testament to the company's vision and resilience.</p>
-              <p>The year 2014 marked a major milestone in Dawa Karpo's journey, as it officially became a multinational company. This expansion allowed the platform to reach a global audience, bringing its services to customers across various countries. With a focus on scalability, reliability, and quality, Dawa Karpo strengthened its position as a leader in the e-commerce industry. Its global presence reflected its ability to adapt to diverse markets and meet the expectations of international customers.</p>
-              <p>Today, Dawa Karpo stands as a symbol of innovation and growth, having transformed from a small IT company into a multinational e-commerce giant. Its success story is an inspiration, showcasing the power of vision, adaptability, and perseverance. By staying true to its roots in technology and continuously striving to enhance the online shopping experience, Dawa Karpo continues to lead in the competitive world of e-commerce.</p>
-              
+        <!-- <img src="pic/1.png"> -->
+        <div class="content-block">
+        <br><br><br><br><br><br><center><h1>About Us</h1></center>
+        
+              <p><strong>Dawa</strong> Karpo is a pioneering e-shopping platform that was established on March 23, 1980. Originally starting as a small IT company, it focused primarily 
+              on developing websites and web applications. This foundation in technology gave the company a strong base to understand the growing digital landscape and adapt to emerging 
+              trends. By leveraging its technical expertise, Dawa Karpo gradually built a reputation for delivering reliable and innovative digital solutions.</p>
+              <p>In its initial years, the company concentrated on providing IT services to local clients, aiming to simplify online processes for businesses. Over time, it recognized the
+              potential of e-commerce and decided to shift its focus toward creating a comprehensive online shopping platform. This strategic move allowed Dawa Karpo to cater to the rising
+              demand for digital shopping, marking the beginning of its transformation into a major player in the e-commerce industry.</p>
+              <p>By continually adapting to market needs and investing in cutting-edge technologies, Dawa Karpo expanded its operations significantly. The company diversified its services,
+              offering a wide range of products and features to enhance the customer experience. Its commitment to innovation, coupled with a customer-first approach, enabled it to gain a 
+              competitive edge in the market. The transition from a small IT company to a full-fledged e-commerce platform was a testament to the company's vision and resilience.</p>
+              <p>The year 2014 marked a major milestone in Dawa Karpo's journey, as it officially became a multinational company. This expansion allowed the platform to reach a global audience, 
+              bringing its services to customers across various countries. With a focus on scalability, reliability, and quality, Dawa Karpo strengthened its position as a leader in the e-commerce 
+              industry. Its global presence reflected its ability to adapt to diverse markets and meet the expectations of international customers.</p>
+              <p>Today, Dawa Karpo stands as a symbol of innovation and growth, having transformed from a small IT company into a multinational e-commerce giant. Its success story is an inspiration, 
+              showcasing the power of vision, adaptability, and perseverance. By staying true to its roots in technology and continuously striving to enhance the online shopping experience, Dawa Karpo 
+              continues to lead in the competitive world of e-commerce.</p>
+        </div>     
     </body>
 </html>

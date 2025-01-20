@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   .image-container {
+  display: flex; /* Enables flex layout */
+  flex-wrap: wrap; /* Wraps items to the next row if needed */
+  justify-content: space-around; /* Adds spacing between items */
+  gap: 20px; /* Adds space between rows and columns */
+  padding: 20px; /* Optional: Add padding around the container */
+}
+
+.item {
+  display: flex; /* Enables flex layout for the child items */
+  flex-wrap: wrap; /* Wraps child items to the next row if needed */
+  gap: 20px; /* Adds space between image-wrapper blocks */
+}
+
+.image-wrapper {
+  width: 150px; /* Adjust the width */
+  height: 150px; /* Adjust the height */
+  text-align: center; /* Center the text below the image */
+  border: 1px solid #ddd; /* Optional: Border around the block */
+  border-radius: 8px; /* Optional: Rounded corners */
+  overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+.image-wrapper img {
+  width: 100%; /* Image fits the wrapper width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image fills the container */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.1); /* Slight zoom-in on hover */
+}
+
+.image-wrapper p {
+  margin-top: 10px; /* Adds space between image and text */
+  font-size: 14px;
+  color: #333;
+}
+
+  </style>
+</head>
+<body>
+    <a href="#item"></a>
+     
+    <a name="item"></a>
+    <div class="image-container">
+      <div class="item">
+        <div class="image-wrapper">
+          <img src="pic/23.png" class="image">
+          <p><a href="earbud.html">Ear Buds</a></p>
+        </div>
+        <div class="image-wrapper">
+          <img src="pic/24.jpg" class="image">
+          <p>Phone</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="pic/25.jpg" class="image">
+          <p>Headphone</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="pic/25.png" class="image">
+          <p>Laptop</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="pic/26.png" class="image">
+          <p>Mouse</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="pic/7.jpg" class="image">
+          <p>T-Shirt</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="pic/8.png" class="image">
+          <p>Fashion Show</p>
+        </div>
+        <div class="image-wrapper">
+          <img src="pic/9.jpg" class="image">
+          <p>Fashion Show</p>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
   <style>
-     * { 
+    * { 
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -18,7 +17,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #efe7ff; /* Light purple background */
+      background-color: #efe7ff;
     }
 
     .container {
@@ -26,34 +25,23 @@
       width: 350px;
       background-color: #fff;
       border-radius: 15px;
-      padding: 20px 30px;
+      padding: 30px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* - */
-
     .logo img {
-      width: 200px;
-      height: 100px;
+      width: 150px;
       margin-bottom: 20px;
     }
 
     h1 {
       font-size: 24px;
-      font-weight: bold;
       color: #000;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      font-size: 22px;
-      font-weight: 500;
-      color: #555;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       text-align: left;
     }
 
@@ -68,9 +56,10 @@
       width: 100%;
       padding: 10px;
       font-size: 14px;
-      border: 1px solid #ccc;
+      border: 2px solid #ccc;
       border-radius: 5px;
       outline: none;
+      transition: border-color 0.3s;
     }
 
     input:focus {
@@ -78,14 +67,18 @@
       box-shadow: 0 0 5px rgba(0, 150, 255, 0.5);
     }
 
+    .error-message {
+      font-size: 14px;
+      margin-top: 5px;
+      color: red;
+    }
+
     .btn {
-      display: block;
       width: 100%;
-      padding: 10px 0;
-      margin: 10px 0;
+      padding: 10px;
       font-size: 16px;
       color: #fff;
-      background-color: #80bfff; /* Light blue button color */
+      background-color: #80bfff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -93,11 +86,11 @@
     }
 
     .btn:hover {
-      background-color: #66a3ff; /* Darker blue on hover */
+      background-color: #66a3ff;
     }
 
     .form-footer {
-      margin-top: 15px;
+      margin-top: 20px;
       font-size: 14px;
       color: #555;
     }
@@ -113,37 +106,85 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- <div class="back-arrow">
-      &larr;
-    </div>  -->
-    <div class="logo">
-      <img src="pic/1.png" alt="Dog Logo">
-    </div>
-    <h1>Welcome To</h1>
-    <h2>Dawa Karpo</h2>
 
-    <!-- Login Form -->
-     <form action="login.php" method="POST"></form>
-      <div class="form-group">
-        <label for="email">Email or Username</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email or username" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-      </div>
-      <button type="submit" class="btn">Log in</button>
-    </form>
+  <div class="container">
+    <div class="logo">
+      <img src="pic/1.png" alt="Company Logo">
+    </div>
+    <h1>Login</h1>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" onkeyup="validateEmail()">
+      <span id="email-error" class="error-message"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" onkeyup="validatePassword()">
+      <span id="password-error" class="error-message"></span>
+    </div>
+
+    <button class="btn" onclick="return validateForm()">Login</button>
 
     <div class="form-footer">
       <p>Don't have an account? <a href="#">Sign up</a></p>
+      <p>Forgot password? <a href="#">Reset here</a></p>
     </div>
-    <div class="form-footer">
-        <p>Forget password? <a href="#">Forget password</a></p>
-      </div>
-  </div> 
-  
- 
+  </div>
+
+  <script>
+    function validateEmail() {
+      var email = document.getElementById("email");
+      var emailError = document.getElementById("email-error");
+      var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+
+      if (email.value.trim() === "") {
+        emailError.textContent = "Email cannot be empty";
+        email.style.borderColor = "red";
+        return false;
+      } else if (!email.value.match(emailPattern)) {
+        emailError.textContent = "Invalid email format";
+        email.style.borderColor = "red";
+        return false;
+      } else {
+        emailError.textContent = "";
+        email.style.borderColor = "green";
+        return true;
+      }
+    }
+
+    function validatePassword() {
+      var password = document.getElementById("password");
+      var passwordError = document.getElementById("password-error");
+      var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+      if (password.value.trim() === "") {
+        passwordError.textContent = "Password cannot be empty";
+        password.style.borderColor = "red";
+        return false;
+      } else if (!password.value.match(passwordPattern)) {
+        passwordError.textContent = "Must include uppercase, lowercase, and number";
+        password.style.borderColor = "red";
+        return false;
+      } else {
+        passwordError.textContent = "";
+        password.style.borderColor = "green";
+        return true;
+      }
+    }
+
+    function validateForm() {
+      var isEmailValid = validateEmail();
+      var isPasswordValid = validatePassword();
+
+      if (isEmailValid && isPasswordValid) {
+        alert("Login successful!");
+        window.location.href = "dashboard.html";
+      }
+      return false;
+    }
+  </script>
+
 </body>
-</html> 
+</html>

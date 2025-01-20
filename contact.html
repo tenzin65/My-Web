@@ -9,19 +9,88 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', Times, serif, sans-serif;
     }
 
     body {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column; /* Arrange items in a column */
       height: 100vh;
       background-color: #e6e1f4; /* Light purple background */
     }
 
+    nav {
+      width: 100%;
+      background-color: #f3ecff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px 20px;
+      position: fixed; /* Fix the navbar at the top */
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 100px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      padding: 5px 10px;
+    }
+
+    .nav-links a:hover {
+      color: #666;
+    }
+
+    .search-bar {
+      display: none;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 5px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-bar button {
+      padding: 5px 10px;
+      background-color: #666;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #333;
+    }
+
     .contact-card {
-      width: 300px;
+      margin: auto;
+      margin-top: auto; /* Push the contact card to the bottom */
+      width: 700px;
       background-color: #f3ecff; /* Slightly lighter purple */
       border-radius: 20px;
       text-align: center;
@@ -29,30 +98,8 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    .back-arrow {
-      text-align: left;
-      font-size: 24px;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    .back-arrow a {
-      text-decoration: none;
-      color: black;
-    }
-
-    .back-arrow a:hover {
-      color: #666;
-    }
-
-    .logo img {
-      width: 150px;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
     h1 {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
       margin-bottom: 20px;
       color: #333;
@@ -65,12 +112,53 @@
       font-size: 16px;
     }
 
+    .contact-details p {
+      font-size: 35px;
+      text-align: center;
+    }
+
     .contact-details strong {
       font-weight: bold;
+      font-size: 40px;
     }
+
   </style>
 </head>
 <body>
+  <!-- Nav Bar  -->
+  <nav class="navbar">
+    <div class="logo">
+        <img src="pic/1.png" height="50px" width="50px">
+    </div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Logout</a></li>
+        <li><a href="#search" id="searchLink">Search</a></li>
+    </ul>
+
+    <!-- Search bar inside navbar -->
+    <div class="search-bar" id="searchBar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </div>
+</nav>
+<script>
+  // JavaScript to toggle the search bar visibility
+  document.getElementById('searchLink').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      const searchBar = document.getElementById('searchBar');
+      if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+          searchBar.style.display = 'flex';
+      } else {
+          searchBar.style.display = 'none';
+      }
+  });
+</script>
+
+<!-- Contact Details  -->
+
   <div class="contact-card">
     <!-- <div class="back-arrow">
       <a href="#">&larr;</a>

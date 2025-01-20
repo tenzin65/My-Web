@@ -115,44 +115,53 @@ body {
   .active {
     background-color: #717171;
   }
-  /* div tag image  */
 
-.image-container {
-    display: flex;
-    flex-wrap: wrap; /* Ensures images wrap to the next row if needed */
-    justify-content: space-around; /* Adds spacing between images */
-    align-items: flex-start; /* Aligns items to the top */
-    gap: 20px; /* Space between items */
+
+
+   /* div image  */
+   .image-container {
+    display: flex; /* Enables flex layout */
+    flex-wrap: wrap; /* Wraps items to the next row if needed */
+    justify-content: center; /* Adds spacing between items */
+    gap: 20px; /* Adds space between rows and columns */
+    padding: 20px; /* Optional: Add padding around the container */
+    align-items: center; /* Align image vertically within the wrapper */
+    margin: 20px;
   }
   
   .item {
-    display: flex;
-    flex-wrap: wrap; /* Allows images in multiple rows if needed */
-    /* gap: 10px; */
+    display: flex; /* Enables flex layout for the child items */
+    flex-wrap: wrap; /* Wraps child items to the next row if needed */
+    gap: 20px; /* Adds space between image-wrapper blocks */
   }
   
   .image-wrapper {
+    width: 150px; /* Adjust the width */
+    height: 150px; /* Adjust the height */
+    text-align: center; /* Center the text below the image */
+    border: 1px solid #ddd; /* Optional: Border around the block */
+    border-radius: 8px; /* Optional: Rounded corners */
+    overflow: hidden; /* Ensures content doesn't overflow */
     display: flex;
-    flex-direction: column; /* Stacks image and text vertically */
-    align-items: center; /* Centers the text below the image */
-    width: 450px; /* Matches the image width */
+    flex-direction: column; /* Stacks the image and text vertically */
+    align-items: center; /* Align image vertically within the wrapper */
   }
   
-  .image {
-    width: 100%; /* Ensures the image fits the wrapper */
-    height: 200px; /* Fixed height */
-    object-fit: cover; /* Ensures the image maintains aspect ratio */
-    /* border: 2px solid #333131; Optional: Add a border */
-    /* border-radius: 5px; Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  .image-wrapper img {
+    width: 100%; /* Image fits the wrapper width */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures the image fills the container */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
   }
   
-  .image-wrapper p {
-    margin-top: 10px; /* Adds space between the image and text */
-    font-size: 16px;
-    color: #333;
-    text-align: center; /* Centers the caption */
+  .image-wrapper:hover img {
+    transform: scale(1.1); /* Slight zoom-in on hover */
   }
+  
+  
+  
+  
+
 
   
 
