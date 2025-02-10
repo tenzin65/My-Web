@@ -1,5 +1,5 @@
 # My-Blog <br>
-10-02-2025<br>
+Day 1 10-02-2025<br>
 Learning Bash script<br>
 ls-it stand for list <br>
 echo $SHELL - it check which shell we are using <br>
