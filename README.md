@@ -1,5 +1,6 @@
 # My-Blog <br>
 # Day 1 10-02-2025</h1><br>
+Today was the first day of my internship. The session began with introductions from everyone, followed by a discussion on why we chose to join this internship.<br>
 Expectation:I hope to gain at least some knowledge of cybersecurity by the end of this internship.<br>
 <ul>Basic bash command</ul>
 <li>setup Ubuntu  wsl --install</li>
