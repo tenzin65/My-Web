@@ -109,3 +109,39 @@ bandit19@bandit:~$ exit
 then you will get password :-0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 
 ```
+level (20-21)
+
+```
+
+bandit20@bandit:~$ ls
+
+suconnect
+
+bandit20@bandit:~$ ./suconnect
+
+Usage: ./suconnect <portnumber>
+
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+
+for this level you need to make your own portal to do that we need to open two terminals 
+for text level
+after doing the above command than use the same portal of bandit20 in the new terminal
+and use
+bandit20@bandit:~$ nc -lvp 1234
+
+Listening on 0.0.0.0 1234
+
+Connection received on localhost 34940
+
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO(paste the password of bandit20)
+
+
+
+then open the previous terminal and use
+bandit20@bandit:~$ ./suconnect 1234
+
+
+
+after the password get match ,sending the next password:- EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+
+```
